@@ -9,51 +9,51 @@ body{
 }
 
 .form {
-    background: #fff;
+    background: #ffeca8;
     width: 90%;
-    max-width: 600px;
-    margin: 100px auto 0;
+    max-width: 700px;
+    margin: 50px auto 0;
+    padding: 50px;
     border-radius: 10px;
-    padding: 30px;
 }
 .form h1 {
-font-weight: 25px ;
+font-size: 30px ;
 color: #3b63a2 ;
 font-weight: 600;
 border-bottom: 1px solid #333;
-padding-bottom: 30px;
+padding-bottom: 10px;
+text-align: center;
 }
 
-.quiz { 
-    padding:20% 0;
+.quiz {
+    padding: 40px 0;
 }
+
 .quiz h2 {
-    font-size: 18px;
+    font-size: 25px;
+    font-weight:600;
     color: #3b63a2;
-    font-weight:400;
+    text-align: center;
 }
 
 .btn {
     background: #fff;
     color: #3b63a2;
-    font-weight: 500;
+    font-weight: 600;
     width: 100%;
-    border: 1px solid #222;
+    border: 1px solid #3b63a2;
     padding:10px;
     margin: 10px 0;
-    text-align: left;
-    border-radius: 4px;
+    text-align: center;
+    border-radius: 10px;
     cursor: pointer;
 }
 
-.btn:hover: not[disabled]) {
+.btn:hover {
   background: #3b63a2;
   color:#fff;  
 }
 
-.btn:disabled{
-    cursor: no-drop;
-}
 
 #next-btn {
     background: #dadbda;
@@ -62,10 +62,11 @@ padding-bottom: 30px;
     width:150px;
     border: 0;
     padding: 10px;
-    margin: 20px auto 0;
-    border-radius: 4px;
+    margin: 25px auto;
+    border-radius: 10px;
     cursor: pointer;
     display: none;
+   
 }
 
 .correct {
