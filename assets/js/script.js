@@ -1,11 +1,12 @@
 const questions = [
     {
         question: "Which planet is known as the 'Red Planet'?",
-    answers: [
-        {text: "Earth", correct: false},
-        {text: "Jupiter", correct: false},
-        {text: "Saturn", correct: false},
-        {text: "Mars", correct: true},
+        answers: [
+            {text: "Earth", correct: false},
+            {text: "Mars", correct: true},
+            {text: "Venus", correct: false},
+            {text: "Saturn", correct: false},
+         
     ]
     },
     {
@@ -29,14 +30,14 @@ const questions = [
     {
         question: "What is the capital of Portugal?",
         answers: [
-            {text: "Vienna", correct: true},
+            {text: "Vienna", correct: false},
             {text: "Madrid", correct: false},
             {text: "Lisbon", correct: true},
             {text: "Belgrade", correct: false},
 
         ]
-    }
-   
+    },
+    
 ];
    
 
@@ -46,29 +47,32 @@ const answerButton= document.getElementById("answer-buttons");
 const nextButton= document.getElementById("next-btn");
 
 let currentQuestionIndex = 0;
-let score = 0;
+let userScore = 0;
 
-function startGame() {
+function startGame(){
     currentQuestionIndex = 0;
-    score = 0;
-    nextButton.innerHTML = "Next Question";
+    userScore = 0;
+    nextButton.innerText = "Next Question";
     showQuestion();
 }
-    function showQuestion() {
+
+function showQuestion(){
         resetState();
         let currentQuestion= questions[currentQuestionIndex];
-        questionElement.innerText = currentQuestion.question;
-        
+        let questionNo = currentQuestionIndex + 1;
+        questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
+
         currentQuestion.answers.forEach(answer => {
 
-            const button = document.forEach("button");
-            button.innerText = answer.text;
+            const button = document.createElement("button");
+            button.innerHTML = answer.text;
             button.classList.add("btn");
+            answerButton.appendChild(button);
             if (answer.correct) {
                 button.dataset.correct = answer.correct;
             }
             button.addEventListener("click",selectAnswer);
-            answerButton.appendChild(button)
+            
         });
     }
     
@@ -80,34 +84,42 @@ function startGame() {
         }
 
         function selectAnswer(e) {
+
             const selectedBtn = e.target;
             const correct = selectedBtn.dataset.correct === "true";
 
             if(correct) {
                 selectedBtn.classList.add("correct");
-                score++;
+                
 
             } else {
                 selectedBtn.classList.add("wrong");
 
             }
             Array.from(answerButton.children).forEach(button => {
+
                 if (button.dataset.correct === "true") {
                     button.classList.add("correct");
                  }
                  button.disabled = true;
+                
             });
+
+            if (correct) {
+                userScore++;
+            }
+
         nextButton.style.display = "block";
         }
 
-        function showResult() {
+        function showResult(){
             resetState();
-            questionElement.innerHTML = `You scored  ${score} out of ${questions.length}`; 
+            questionElement.innerHTML = `You scored  ${userScore} out of ${questions.length}`; 
             nextButton.innerHTML = "Play Again";
             nextButton.style.display = "block";
         }
 
-        function handleNextButton() {
+        function handleNextButton(){
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
                 showQuestion();
@@ -119,8 +131,10 @@ function startGame() {
         nextButton.addEventListener("click",() => {
             if (currentQuestionIndex < questions.length) {
                 handleNextButton();
+            } else {
+                startGame();
             }
-        } )
+        });
         startGame();
 
   

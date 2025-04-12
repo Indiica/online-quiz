@@ -1,9 +1,15 @@
+/*Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:"Noto Sans", sans-serif;
+   
     box-sizing: border-box;
 }
+
 body{
    background: #79b495; 
 }
@@ -12,7 +18,7 @@ body{
     background: #ffeca8;
     width: 90%;
     max-width: 700px;
-    margin: 50px auto 0;
+    margin: 40px auto 0;
     padding: 50px;
     border-radius: 10px;
 }
@@ -26,12 +32,15 @@ text-align: center;
 }
 
 .quiz {
-    padding: 40px 0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .quiz h2 {
     font-size: 25px;
-    font-weight:600;
+    font-weight: 600;
     color: #3b63a2;
     text-align: center;
 }
@@ -56,7 +65,7 @@ text-align: center;
 
 
 #next-btn {
-    background: #dadbda;
+    background: #243e8c;
     color: #79b495;
     font-weight: 500;
     width:150px;
@@ -70,9 +79,26 @@ text-align: center;
 }
 
 .correct {
-    background: #0cf278;
+    background: #14c96e;
+    color: #fff;
 }
 
-.incorrect {
-    background: #f8521b;
+.wrong{
+    background: #e04100;
+    color: #fff;
+}
+
+@media screen and (max-width: 500px){
+    .form {
+        padding: 30px 20px;
+
+    }
+    .form h1 {
+        font-size: 24px;
+    }
+
+    .quiz h2 {
+        font-size: 20px;
+    }
+    
 }
