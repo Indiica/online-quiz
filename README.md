@@ -15,7 +15,7 @@ As a user, I want to take a quiz online and to test my knowledge about general t
 + **Form Space and Next Question**
 
 Form Space is defined by four questions with four options for each of them.
-The section will allow user to play the quiz immeditely and with the Next Question button, user can see at the end of the quiz their result.
+The section will allow user to play the quiz immeditely and with the Next Question button, the user can see next question and at the end of the quiz their final result.
 ![Form Space ](./assets/images/Form%20space.png)
 *Next question button*
 ![Next Question button](./assets//images/Next%20question.png)
@@ -95,11 +95,11 @@ No errors were returned when passing through the official [Jigsaw validator](htt
 
  ## Credit
 **Content**
-Inspired by youtube video [YouTube](https://www.youtube.com/watch?v=PBcqGxrr9g8)
+
+The YouTube tutorial that has inspired me. [YouTube tutorial](https://www.youtube.com/watch?v=PBcqGxrr9g8)
 
 **Media**
 
-The colors were inspired..
 
 All icons were used from [Font Awesome](https://fontawesome.com)
 
